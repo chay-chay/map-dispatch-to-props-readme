@@ -13,7 +13,7 @@ class App extends Component {
   }
 
   render() {
-    debugger
+    // debugger
     return (
       <div className="App">
         <button onClick={(event) => this.handleOnClick(event)}>
@@ -25,11 +25,11 @@ class App extends Component {
   }
 };
 
-const mapStateToProps = (state) => {
-  return {
-    items: state.items
-  };
-};
+// const mapStateToProps = (state) => {
+//   return {
+//     items: state.items
+//   };
+// };
 
 // Code change: this new function takes in dispatch as an argument
 // It then returns an object that contains a function as a value!
@@ -44,4 +44,6 @@ const mapStateToProps = (state) => {
   // };
 
 // export default connect(mapStateToProps, mapDispatchToProps)(App); 
-export default connect(mapStateToProps, { addItem })(App); // Code change: no mapDispatchToProps function required! 
+// export default connect(mapStateToProps, { addItem })(App); // Code change: no mapDispatchToProps function required! 
+// get rid of mapStateToProps as below
+export default connect(state => ({ items: state.items }), { addItem })(App); 
