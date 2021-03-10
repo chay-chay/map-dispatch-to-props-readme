@@ -62,3 +62,6 @@ export default connect(state => ({ items: state.items }), { addItem })(App);
 // }
 
 // export default connect(mapStateToProps, mapDispatchToProps)(App); 
+
+// Dan Abramov Stack Overflow Response about mapDispatchToProps
+// https://stackoverflow.com/questions/34458261/how-to-get-simple-dispatch-from-this-props-using-connect-w-redux
