@@ -5,14 +5,18 @@ import { addItem } from  './actions/items';
 
 class App extends Component {
 
+  // handleOnClick() {
+  //   this.props.store.dispatch(addItem());
+  // }
   handleOnClick = event => {
     this.props.addItem() // Code change: this.props.store.dispatch is no longer being called
   }
 
   render() {
+    debugger
     return (
       <div className="App">
-        <button onClick={this.handleOnClick}>
+        <button onClick={(event) => this.handleOnClick(event)}>
           Click
           </button>
         <p>{this.props.items.length}</p>
@@ -31,12 +35,13 @@ const mapStateToProps = (state) => {
 // It then returns an object that contains a function as a value!
 // Notice above in handleOnClick() that this function, addItem(),
 // is what is called, NOT the addItem action creator itself.
-const mapDispatchToProps = dispatch => {
-  return {
-    addItem: () => {
-      dispatch(addItem())
-    }
-  };
-};
+  // const mapDispatchToProps = dispatch => {
+  //   return {
+  //     addItem: () => {
+  //       dispatch(addItem())
+  //     }
+  //   };
+  // };
 
-export default connect(mapStateToProps, mapDispatchToProps)(App); 
+// export default connect(mapStateToProps, mapDispatchToProps)(App); 
+export default connect(mapStateToProps, { addItem })(App); // Code change: no mapDispatchToProps function required! 
