@@ -47,3 +47,18 @@ class App extends Component {
 // export default connect(mapStateToProps, { addItem })(App); // Code change: no mapDispatchToProps function required! 
 // get rid of mapStateToProps as below
 export default connect(state => ({ items: state.items }), { addItem })(App); 
+
+// if keep everything, should write it as below.
+const mapStateToProps = state => {
+//   return {
+//     items: state.items
+//   }
+// }
+
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     addItem: () => { dispatch(addItem()) }
+//   }
+// }
+
+// export default connect(mapStateToProps, mapDispatchToProps)(App); 
