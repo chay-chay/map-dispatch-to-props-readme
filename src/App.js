@@ -49,7 +49,7 @@ class App extends Component {
 export default connect(state => ({ items: state.items }), { addItem })(App); 
 
 // if keep everything, should write it as below.
-const mapStateToProps = state => {
+// const mapStateToProps = state => {
 //   return {
 //     items: state.items
 //   }
